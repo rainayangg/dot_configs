@@ -106,3 +106,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 export PATH="/usr/local/opt/unifdef/bin:$PATH"
+
+vman() { man $* | col -b | vim -c 'set ft=man nomod nolist' -; }    
+alias man="vman"
