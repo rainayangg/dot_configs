@@ -404,10 +404,10 @@ call plug#begin()
 
 " Add vimwiki plugin
 Plug 'vimwiki/vimwiki'
+
+
+" Add nerdtree plugin
 Plug 'preservim/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'overcache/NeoSolarized'
 
 " Initialize plugin system
 call plug#end()
@@ -428,8 +428,8 @@ set nocompatible
 filetype plugin on
 syntax on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""nerdtree configs""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""Nerdtree configs""""""""""""""""""""""""
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -439,17 +439,4 @@ nnoremap <C-f> :NERDTreeFind<CR>
 """"""""""""""""""""""""Vim Airline configs""""""""""""""""""""""""
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='solarized'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""""""""""""""""""""""""colorscheme configs""""""""""""""""""""""""
-set termguicolors
-set background=dark
-let g:neosolarized_contrast = "normal"
-let g:neosolarized_visibility = "normal"
-let g:neosolarized_vertSplitBgTrans = 1
-let g:neosolarized_bold = 1
-let g:neosolarized_underline = 1
-let g:neosolarized_italic = 0
-let g:neosolarized_termBoldAsBright = 1
-colorscheme NeoSolarized
 
