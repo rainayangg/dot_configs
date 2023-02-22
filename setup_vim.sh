@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # set up Vim config
 mv ~/.vimrc ~/.vimrc_backup
 ln -s $(pwd)/.vimrc ~/.vimrc
