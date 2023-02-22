@@ -105,3 +105,4 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
+export PATH="/usr/local/opt/unifdef/bin:$PATH"

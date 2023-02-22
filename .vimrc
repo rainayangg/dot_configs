@@ -254,6 +254,10 @@ endtry
 " Return to last edit position when opening files (You want this!)
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => terminal map 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+tnoremap <leader><Esc> <C-\><C-n>
 
 """"""""""""""""""""""""""""""
 " => Status line
@@ -400,6 +404,10 @@ call plug#begin()
 
 " Add vimwiki plugin
 Plug 'vimwiki/vimwiki'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'overcache/NeoSolarized'
 
 " Initialize plugin system
 call plug#end()
@@ -419,4 +427,29 @@ let g:vimwiki_list = [{
 set nocompatible
 filetype plugin on
 syntax on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""nerdtree configs""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""Vim Airline configs""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""colorscheme configs""""""""""""""""""""""""
+set termguicolors
+set background=dark
+let g:neosolarized_contrast = "normal"
+let g:neosolarized_visibility = "normal"
+let g:neosolarized_vertSplitBgTrans = 1
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 0
+let g:neosolarized_termBoldAsBright = 1
+colorscheme NeoSolarized
 
