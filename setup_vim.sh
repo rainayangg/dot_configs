@@ -12,3 +12,4 @@ vim +PluginInstall +qall
 mkdir -p ~/.config/nvim/
 mv ~/.config/nvim ~/.config/nvim_backup
 cp -r $(pwd)/nvim ~/.config/nvim
+nvim +PluginInstall +qall
