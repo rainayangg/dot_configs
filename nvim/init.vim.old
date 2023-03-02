@@ -1,0 +1,76 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+source ~/.vimrc
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""colorscheme configs""""""""""""""""""""""""
+set termguicolors
+set background=dark
+let g:neosolarized_contrast = "normal"
+let g:neosolarized_visibility = "normal"
+let g:neosolarized_vertSplitBgTrans = 1
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 0
+let g:neosolarized_termBoldAsBright = 1
+colorscheme NeoSolarized
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""Plugins""""""""""""""""""""""""""""""
+" add easymotion configuration here
+
+call plug#begin()
+" The default plugin directory will be as follows:
+"   - Vim (Linux/macOS): '~/.vim/plugged'
+"
+" You can specify a custom plugin directory by passing it as the argument
+"   - e.g. `call plug#begin('~/.vim/plugged')`
+"   - Avoid using standard Vim directory names like 'plugin'
+
+" Make sure you use single quotes
+
+" Add vimwiki plugin
+Plug 'vimwiki/vimwiki'
+
+
+" Add nerdtree plugin
+Plug 'preservim/nerdtree'
+
+" Add vim-airline plugin
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Add nvim-treesitter plugin
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+" Initialize plugin system
+call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""Vimwiki configs""""""""""""""""""""""""
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/vimwiki',
+  \ 'path_html': '$HOME/vimwiki_html/',
+  \ 'nested_syntaxes': {'python':'python', 'c++': 'cpp'},
+  \ 'template_path': '$HOME/vimwiki/templates',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html',
+  \ 'auto_export': 1,
+  \ 'auto_diary_index': 1}]
+
+set nocompatible
+filetype plugin on
+syntax on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""Nerdtree configs""""""""""""""""""""""""
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""Vim Airline configs""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='solarized'
+
