@@ -135,10 +135,6 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
 
 set background=dark
 
@@ -416,6 +412,10 @@ Plug 'vimwiki/vimwiki'
 
 " Add nerdtree plugin
 Plug 'preservim/nerdtree'
+
+" Add vim-airline plugin
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Initialize plugin system
 call plug#end()
