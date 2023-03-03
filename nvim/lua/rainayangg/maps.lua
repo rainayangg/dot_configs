@@ -42,3 +42,7 @@ vim.keymap.set("i", "jj", "<Esc>")
 
 -- nvim-tree
 vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<cr>', { noremap = true })
+
+-- Terminal mode
+vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-n>', { noremap = true })
+vim.keymap.set('n', '<leader>t', ':terminal<cr>', { noremap = true })
