@@ -36,4 +36,10 @@ return require('packer').startup(function(use)
     },
     tag = 'nightly'                  -- optional, updated every week. (see issue #1193)
   }
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use "nvim-telescope/telescope-file-browser.nvim"
+  use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+  use 'vimwiki/vimwiki'
+  use 'L3MON4D3/LuaSnip'
 end)
