@@ -4,7 +4,7 @@ local keymap = vim.keymap
 vim.g.mapleader = ' '
 
 -- Fast saving
-vim.keymap.set('n', '<leader>w', '<cmd>write<cr>')
+vim.keymap.set('n', '<leader>w', '<cmd>wall!<cr>')
 
 -- Select all
 vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
