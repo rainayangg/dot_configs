@@ -39,6 +39,7 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use "nvim-telescope/telescope-file-browser.nvim"
+    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use 'vimwiki/vimwiki'
     use 'L3MON4D3/LuaSnip'

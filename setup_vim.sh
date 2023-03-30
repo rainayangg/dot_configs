@@ -12,6 +12,9 @@ vim +PluginInstall +qall
 sudo apt update
 sudo apt install -y nodejs
 sudo apt install -y npm
+sudo apt install -y xdg-utils
+sudo apt install -y ripgrep
+
 sudo npm i -g pyright
 sudo apt install ccls
 
