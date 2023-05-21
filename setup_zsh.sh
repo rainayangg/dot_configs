@@ -8,11 +8,20 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/
 source ./.zshrc
 
 # if chsh failed:
-# cat <<EOT >> ~/.bashrc
-# if [ "$SHELL" != "/usr/bin/zsh" ]
-# then
-#  export SHELL="/usr/bin/zsh"
-#       exec /usr/bin/zsh
-# fi
-# EOT
-# source ~/.bashrc
+touch ~/.bash_profile
+cat <<EOT >> ~/.bash_profile
+if [ -f "$HOME/.bashrc" ]; then
+    . "$HOME/.bashrc"
+fi
+EOT
+source ~/.bash_profile
+
+cat <<EOT >> ~/.bashrc
+[ -z "$PS1" ] && return
+if [ "$SHELL" != "/usr/bin/zsh" ]
+then
+ export SHELL="/usr/bin/zsh"
+      exec /usr/bin/zsh
+fi
+EOT
+source ~/.bashrc
