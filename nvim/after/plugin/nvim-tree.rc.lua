@@ -9,16 +9,19 @@ vim.opt.termguicolors = true
 
 -- OR setup with some options
 nvim_tree.setup({
-  sort_by = "case_sensitive",
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = false,
-  },
-  actions = {
-    open_file = {
-      resize_window = false,
+    sort_by = "case_sensitive",
+    renderer = {
+        group_empty = true,
     },
-  },
+    filters = {
+        dotfiles = false,
+    },
+    actions = {
+        open_file = {
+            resize_window = false,
+        },
+    },
+    view = {
+        number = true,
+    },
 })

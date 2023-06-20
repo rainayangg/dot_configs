@@ -2,6 +2,7 @@ local keymap = vim.keymap
 
 -- Config leader key
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Fast saving
 vim.keymap.set('n', '<leader>w', '<cmd>wall!<cr>')
@@ -46,3 +47,9 @@ vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<cr>', { noremap = true })
 -- Terminal mode
 vim.keymap.set('t', 'jj', '<C-\\><C-n>', { noremap = true })
 vim.keymap.set('n', '<leader>t', ':terminal<cr>', { noremap = true })
+
+-- spell check
+vim.keymap.set('n', '<leader>sp', function()
+    vim.o.spell = not vim.o.spell
+end
+)

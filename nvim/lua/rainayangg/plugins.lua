@@ -20,7 +20,8 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'        -- nvim-cmp source for buffer words
     use 'hrsh7th/cmp-nvim-lsp'      -- nvim-cmp source for neovim's built-in LSP
     use 'hrsh7th/nvim-cmp'
-    use 'neovim/nvim-lspconfig'     -- LSP
+    use 'hrsh7th/cmp-omni'
+    use 'neovim/nvim-lspconfig' -- LSP
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use {
@@ -39,9 +40,11 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use "nvim-telescope/telescope-file-browser.nvim"
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
     use 'vimwiki/vimwiki'
     use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
     use 'preservim/nerdcommenter'
+    use 'lervag/vimtex'
 end)
