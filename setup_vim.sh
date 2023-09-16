@@ -52,3 +52,4 @@ mkdir -p ~/.config/nvim/
 mv ~/.config/nvim ~/.config/nvim_backup || true
 cp -T -r $cur_dir/nvim ~/.config/nvim
 nvim +PackerInstall +qall
+nvim --headless -c ":TSUpdate cpp c lua vim" -cq
