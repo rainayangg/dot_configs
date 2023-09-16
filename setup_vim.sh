@@ -39,19 +39,16 @@ git clone https://github.com/LuaLS/lua-language-server
 cd lua-language-server
 ./make.sh
 echo 'export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"' >> ~/.zshrc
-source ~/.zshrc
 
 # set up NeoVim config path
 user_home=$(echo $HOME)
 echo "Home directory is '$user_home'"
 if [ "$user_home" = "/root" ]; then
     echo 'export XDG_CONFIG_HOME="/root/.config"' >> ~/.zshrc
-    source ~/.zshrc
 fi
+zsh
 
 mkdir -p ~/.config/nvim/
-mv ~/.config/nvim ~/.config/nvim_backup
-cp -r $cur_dir/nvim ~/.config/nvim
-#git clone --depth 1 https://github.com/wbthomason/packer.nvim\
-      #~/.local/share/nvim/site/pack/packer/start/packer.nvim
+mv ~/.config/nvim ~/.config/nvim_backup || true
+cp -T -r $cur_dir/nvim ~/.config/nvim
 nvim +PackerInstall +qall
