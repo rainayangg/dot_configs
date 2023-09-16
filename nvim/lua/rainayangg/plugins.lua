@@ -47,4 +47,5 @@ return require('packer').startup(function(use)
     use 'saadparwaiz1/cmp_luasnip'
     use 'preservim/nerdcommenter'
     use 'lervag/vimtex'
+    use 'nvim-tree/nvim-web-devicons'
 end)
