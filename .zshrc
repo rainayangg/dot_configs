@@ -74,10 +74,13 @@ ZSH_THEME="agnoster"
 plugins=(git
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+    zsh-vi-mode
 	macos
 ) 
 
 source $ZSH/oh-my-zsh.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=242"
+ZVM_VI_INSERT_ESCAPE_BINDKEY=jj
 
 # User configuration
 
@@ -105,7 +108,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/python@3.7/bin:$PATH"
-export PATH="/usr/local/opt/unifdef/bin:$PATH"
+export PATH="/opt/homebrew/opt/unifdef/bin:$PATH"
 
 vman() { man $* | col -b | vim -c 'set ft=man nomod nolist' -; }    
 alias man="vman"
+
+alias cat="pygmentize -g"
+
+export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
