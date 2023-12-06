@@ -30,6 +30,8 @@ fi
 # install language servers
 sudo npm i -g pyright
 sudo apt install -y ccls
+go install golang.org/x/tools/gopls@latest
+
 
 # install lua-language-server
 sudo apt install -y ninja-build

@@ -117,5 +117,8 @@ alias cat="pygmentize -g"
 
 export PATH="/opt/homebrew/opt/openssl@3/bin:$PATH"
 export PATH="${HOME}/.config/lsp/lua-language-server/bin:${PATH}"
-export PATH=$PATH:/usr/local/go/bin
 
+# golang related
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
