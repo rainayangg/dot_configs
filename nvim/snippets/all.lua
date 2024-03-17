@@ -50,6 +50,25 @@ create_snippet(
     )
 )
 
+create_snippet(
+    {
+        trig = "code",
+        name = "neorg code block",
+        dscr = "neorg code block",
+    },
+    fmt([[
+    @code <>
+    <>
+    @end
+    ]],
+        { insert(1, "lan"),
+            insert(2, "") },
+        { delimiters = "<>" }
+    )
+)
+
+
+
 -- vimwiki link header
 create_snippet(
     {
