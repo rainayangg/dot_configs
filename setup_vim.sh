@@ -16,7 +16,7 @@ sudo apt install -y nodejs
 sudo apt install -y npm
 sudo apt install -y xdg-utils
 sudo apt install -y ripgrep
-sudo apt install -y snap
+sudo apt install -y snapd snap
 
 # install snap and neovim
 if type snap > /dev/null 2>&1; then
