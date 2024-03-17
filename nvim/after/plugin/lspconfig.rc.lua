@@ -24,7 +24,25 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
 end
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+nvim_lsp.gopls.setup {
+    cmd = { 'gopls' },
+    -- for postfix snippets and analyzers
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            experimentalPostfixCompletions = true,
+            analyses = {
+                unusedparams = true,
+                shadow = true,
+            },
+            staticcheck = true,
+        },
+    },
+    on_attach = on_attach,
+}
 
 nvim_lsp.pyright.setup {
     on_attach = on_attach,

@@ -7,7 +7,10 @@ git clone https://github.com/jeffreytse/zsh-vi-mode \
   $ZSH/plugins/zsh-vi-mode
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+zsh
 source ./.zshrc
+
+chsh -s $(which zsh)
 
 # if chsh failed:
 touch ~/.bash_profile
