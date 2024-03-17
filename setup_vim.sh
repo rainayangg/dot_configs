@@ -9,6 +9,9 @@ mv ~/.vim ~/.vim_backup
 cp -r $cur_dir/.vim ~/.vim
 vim +PluginInstall +qall
 
+mkdir -p ~/.config/nvim/
+mv ~/.config/nvim ~/.config/nvim_backup || true
+cp -T -r $cur_dir/nvim ~/.config/nvim
 
 # set up Neovim prerequirements
 sudo apt update
@@ -17,6 +20,7 @@ sudo apt install -y npm
 sudo apt install -y xdg-utils
 sudo apt install -y ripgrep
 sudo apt install -y snapd snap
+sudo apt install -y python3-pygments
 
 # install snap and neovim
 if type snap > /dev/null 2>&1; then
@@ -48,10 +52,7 @@ echo "Home directory is '$user_home'"
 if [ "$user_home" = "/root" ]; then
     echo 'export XDG_CONFIG_HOME="/root/.config"' >> ~/.zshrc
 fi
-zsh
+source ~/.zshrc
 
-mkdir -p ~/.config/nvim/
-mv ~/.config/nvim ~/.config/nvim_backup || true
-cp -T -r $cur_dir/nvim ~/.config/nvim
 nvim +PackerInstall +qall
 nvim --headless -c ":TSUpdate cpp c lua vim" -cq
