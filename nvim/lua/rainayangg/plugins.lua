@@ -17,10 +17,12 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-    use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-    }
+    --use {
+    --'svrana/neosolarized.nvim',
+    --requires = { 'tjdevries/colorbuddy.nvim' }
+    --}
+    use 'folke/tokyonight.nvim'
+    --use "rebelot/kanagawa.nvim"
     use 'nvim-lualine/lualine.nvim' -- Statusline
     use 'nvim-lua/plenary.nvim'     -- Common utilities
     use 'onsails/lspkind-nvim'      -- vscode-like pictograms
@@ -44,7 +46,6 @@ return require('packer').startup(function(use)
         },
         tag = 'nightly'                    -- optional, updated every week. (see issue #1193)
     }
-    use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
     use "nvim-telescope/telescope-file-browser.nvim"
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
@@ -55,7 +56,7 @@ return require('packer').startup(function(use)
     use 'preservim/nerdcommenter'
     use 'lervag/vimtex'
     use 'nvim-tree/nvim-web-devicons'
-    use 'voldikss/vim-floaterm'
+    --use 'voldikss/vim-floaterm'
     use({
         "kylechui/nvim-surround",
         tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -65,6 +66,12 @@ return require('packer').startup(function(use)
             })
         end
     })
+    use 'whonore/Coqtail'
+    use {
+        "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    }
     if packer_bootstrap then
         require('packer').sync()
     end
