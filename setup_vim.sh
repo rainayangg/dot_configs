@@ -34,6 +34,8 @@ fi
 # install language servers
 sudo npm i -g pyright
 sudo apt install -y ccls
+sudo apt-get -y install clang-tools
+sudo apt-get -y install clangd  # on some distributions
 go install golang.org/x/tools/gopls@latest
 
 
